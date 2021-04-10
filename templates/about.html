@@ -1,0 +1,73 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang='en'>
+
+<head>
+  <meta charset='UTF-8'>
+  <title>Portfolio Homepage</title>
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+  <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+</head>
+
+<body>
+  <div class="container">
+    <div class="nav-wrapper">
+      <div class="left-side">
+        <div class="nav-link-wrapper">
+          <a href="{% url 'index' %}">Home</a>
+        </div>
+
+        <div class="nav-link-wrapper active-nav-link">
+          <a href="{% url 'about' %}">About</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="{% url 'register' %}">Register</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="{% url 'login' %}">Login</a>
+        </div>
+
+        <div class="nav-link-wrapper">
+          <a href="{% url 'predict' %}">Predict</a>
+        </div>
+
+      </div>
+
+      <div class="right-side">
+        <div class="brand">
+          VIVEK KUMAR
+        </div>
+      </div>
+    </div>
+
+    <div class="content-wrapper">
+      <div class="two-column-wrapper">
+        <div class="profile-image-wrapper">
+          <img src="{% static 'images/ml2.jpg'%}" alt="">
+        </div>
+
+        <div class="profile-content-wrapper">
+          <h1>Hi, thank you for visiting my page.</h1>
+          <h4>Diabetes Prediction</h4>
+          <p>Diabetes is considered as one of the deadliest and chronic diseases which causes an increase in blood sugar.
+            Many complications occur if diabetes remains untreated and unidentified. The tedious identifying process results
+            in visiting of a patient to a diagnostic center and consulting doctor. But the rise in machine learning approaches solves
+            this critical problem.</p>
+
+          <p>I have designed a model which can prognosticate the likelihood of diabetes in patients with maximum
+            accuracy. Click on the "Predict" tab to check your diabetes results.</p>
+
+          <h4>Other Prediction models coming soon. Stay Safe!</h4>
+
+
+        </div>
+      </div>
+    </div>
+  </div>
+
+</body>
+
+</html>

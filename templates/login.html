@@ -1,0 +1,94 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset='UTF-8'>
+    <title>SignUp</title>
+    <!-- Font Style & Icon -->
+    <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'fonts/material-icon/css/material-design-iconic-font.min.css'%}">
+    <!-- Main css -->
+    <link rel="stylesheet" href="{% static 'css/styles.css'%}">
+    <link rel="stylesheet" href="{% static 'css/style.css'%}">
+</head>
+
+<body>
+    <div class="container">
+        <div class="nav-wrapper">
+            <div class="left-side">
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'index' %}">Home</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'about' %}">About</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'register' %}">Register</a>
+                </div>
+
+                <div class="nav-link-wrapper active-nav-link">
+                    <a href="{% url 'login' %}">Login</a>
+                </div>
+
+                <div class="nav-link-wrapper">
+                    <a href="{% url 'predict' %}">Predict</a>
+                </div>
+            </div>
+
+            <div class="right-side">
+                <div class="brand">
+                    VIVEK KUMAR
+                </div>
+            </div>
+        </div>
+
+        <div class="container">
+            <section class="sign-in">
+                <div class="container">
+                    <div class="signin-content">
+                        <div class="signin-image">
+                            <figure><img src="{% static 'images/signin-image.jpg'%}" alt="sing up image"></figure>
+                            <a href="{% url 'register' %}" class="signup-image-link">Create an account</a>
+                        </div>
+
+                        <div class="signin-form">
+                            <h2 class="form-title">Sign in</h2>
+                            <form method="POST" class="register-form" id="login-form">
+                            {% csrf_token %}
+                                <div class="form-group">
+                                    <label for="your_name"><i class="zmdi zmdi-account material-icons-name"></i></label>
+                                    <input type="text" name="your_name" id="your_name" placeholder="Your Name"/>
+                                </div>
+                                <div class="form-group">
+                                    <label for="your_pass"><i class="zmdi zmdi-lock"></i></label>
+                                    <input type="password" name="your_pass" id="your_pass" placeholder="Password"/>
+                                </div>
+                                <div class="form-group">
+                                    <input type="checkbox" name="remember-me" id="remember-me" class="agree-term" />
+                                    <label for="remember-me" class="label-agree-term"><span><span></span></span>Remember me</label>
+                                </div>
+                                <div class="form-group form-button">
+                                    <input type="submit" name="signin" id="signin" class="form-submit" value="Log in"/>
+                                </div>
+                            </form>
+                            <div class="social-login">
+                                <span class="social-label">Or login with</span>
+                                <ul class="socials">
+                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-facebook"></i></a></li>
+                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-twitter"></i></a></li>
+                                    <li><a href="#"><i class="display-flex-center zmdi zmdi-google"></i></a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </div>
+
+</body>
+</html>
